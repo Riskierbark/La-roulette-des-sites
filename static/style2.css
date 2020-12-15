@@ -1,84 +1,184 @@
-/* Entête */
-h1, .title {
-  color: #133da8;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 30px 0 0px;
-  margin: 0;
-  text-transform: uppercase;
-  border-bottom: 2mm solid #3f5762;
-  border-radius: 8px;
-  font-family: monospace;
-  letter-spacing: 0.5mm;
+/* WARNING: This CSS is utter trash, users beware, procede at own risk */
+
+body, html {
+	padding: 0;
+	margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: content-box radial-gradient(crimson, skyblue);
 }
 
-/* Nouvelle tâche */
-.title {
-  display: block;
-  margin: 0 0 18px;
+#addTimer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.todo {
-  color: white;
+input[type=number]{
+    width: 180px;
 }
 
-/*Accomplies*/
-.done {
-  color: grey;
-  text-decoration: line-through;
+#minMax {
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-/*Corps principal*/
-body {
-  background: linear-gradient(black, #1f1f20);
+#arrow{
+    font-size: 40px;
+    margin: 0;
 }
 
-.starter-template {
-  color: #7d7b7b;
-  font-family: sans-serif
+#minMax > div {
+    max-width: 50%;
 }
 
-.container {
-  padding: 15px;
-  margin-top: 12%;
-  justify-content: center;
+.shotterudTitle{
+    font-size: 94px;
+    text-shadow: 3px 3px 1px yellow, 3px -3px 1px magenta, -3px 3px 1px cyan;
+    z-index: 1;
 }
 
-.line_underneath {
-  border-bottom: 2px solid #133da8;
-  margin-bottom: 0px;
+input {
+    font-size: 40px;
 }
 
-h4 {
-  font-weight:bold;
-  margin:15px;
+button {
+    font-size: 48px;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 80%;
+}
+li, .winners > div {
+    float: left;
+    min-width: 10%;
+    list-style: none;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 55px;
 }
 
-.listdesign > li {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 15px;
+.winners{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    overflow: hidden;
+    width: 80%;
 }
 
-.listdesign > li, h1 {
-  clear: both;
-  list-style: none;
+.playerName:hover{
+    cursor: pointer;
+    filter: drop-shadow(16px 16px 20px red) invert(75%);
 }
 
-.resultContainer {
-  flex-direction: column;
-  display: flex;
-  margin: auto;
-  overflow-wrap: break-word;
+.rouletteContainer{
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    height: 400px;
+    max-width: 1500px;
+    overflow-x: hidden;
 }
 
-.eachResult{
-  margin-top: 15px;
-  background-color: rgb(164, 166, 168);
-  color: rgb(31, 29, 29);
-  border-left: 10px solid #133da8;
+.roulette {
+    top: 10px;
+    position: absolute;
+    display: flex;
+    overflow: none;
+    flex-wrap: nowrap;
+    transition-duration: 5s;
+    transition-timing-function: ease-in-out;
+    left:0;
 }
 
-.deleteAndDoneButton {
-  margin-top: 10px;
+.roulette:after {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 2px dotted #ff0000;
+    transform: translate(-50%);
 }
+
+.roulette > div{
+    width: 140px;
+    min-width: 140px;
+    float: left;
+}
+
+.roulette > div > h3 {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+}
+
+.line{
+    width: 5px;
+    position: absolute;
+    background-color: black;
+    height: 100px;
+    left: 180px;
+    z-index: 1;
+}
+
+/* Reset */
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Custom */
+  button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 28px;
+    top: 0;
+    font-size: 30px;
+    font-family: "Open Sans", Helvetica;
+    border-radius: 4px;
+    border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
+    background: rgb(50, 151, 143);
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+  }
+
+  #startButton{
+    padding: 20px 38px;
+  }
+
+  #startButton:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+
+    -webkit-transform: rotateX(10deg);
+       -moz-transform: rotateX(10deg);
+        -ms-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+  }
+
+  button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+    background: rgb(12, 167, 97);
+  }
