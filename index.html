@@ -95,7 +95,15 @@ SOFTWARE.
                     {"label":"randomanime.org",  "value":1,  "question":"Anime.org - https://www.randomanime.org/"}, 
                     {"label":"themes.moe",  "value":1,  "question":"themes.moe - https://themes.moe/"}, 
         ];
-
+        
+        function leclicklà() {
+          for question in data 
+            if (label == "themes.moe") {
+              return str.link("https://themes.moe/")
+            } else {
+              return str.link("https://www.randomanime.org/")
+            }
+        }
 
         var svg = d3.select('#chart')
             .append("svg")
